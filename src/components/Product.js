@@ -66,6 +66,8 @@ Product.propTypes = {
       transmission: PropTypes.string,
       numberOfDoors: PropTypes.string,
       img: PropTypes.string,
+      img1: PropTypes.string,
+      img2: PropTypes.string,
       driveType: PropTypes.string,
       chassi: PropTypes.string,
       tankVolume: PropTypes.string,
