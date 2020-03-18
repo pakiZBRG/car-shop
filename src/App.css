@@ -1,38 +1,348 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Cabin|Bitter|Josefin+Sans|Kanit&display=swap');
+
+:root {
+  --Orange: #f4a950;
+  --Black: #161b21;
+  --Grey: #ddc6b6;
+  --White: #f7f7f9;
+  --Red: #d2302c;
+  --Yellow: #f9d342;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Cabin' !important;
+  background: repeating-linear-gradient(90deg, rgb(3, 3, 3) 0px, rgb(3, 3, 3) 18px,rgb(11, 11, 11) 18px, rgb(11, 11, 11) 36px,rgb(0, 0, 0) 36px, rgb(0, 0, 0) 54px,rgb(5, 5, 5) 54px, rgb(5, 5, 5) 72px,rgb(8, 8, 8) 72px, rgb(8, 8, 8) 90px,rgb(14, 14, 14) 90px, rgb(14, 14, 14) 108px,rgb(19, 19, 19) 108px, rgb(19, 19, 19) 126px,rgb(16, 16, 16) 126px, rgb(16, 16, 16) 144px) !important;
+  color: var(--White) !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* SCROLLBAR */
+::-webkit-scrollbar-track{
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 8px;
+	background-color: #000;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+::-webkit-scrollbar{
+	width: 10px;
+	background-color: #000;
+}
+
+::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #fff;
+}
+
+/* SELECTION */
+::selection{
+  background-color: #fff;
+  color: var(--Black);
+}
+
+.kanit {
+  font-family: "Bitter";
+  word-spacing: 5px;
+}
+
+.color {
+  background: #f9d342;
+  color: #161b21;
+  font-weight: bold;
+  padding: 4px 5px 0 5px;
+}
+
+.color-white{
+  background: rgba(255,255,255, .35);
+  padding: 12px 0;
+  transition: 500ms;
+}
+
+.color-white:hover {background: rgba(255,255,255, .15);}
+
+.color-red {
+  background: var(--Red);
+  color: var(--White);
+  padding: 4px 5px 0 5px;
+}
+
+.text-title {
+  font-family: "Josefin Sans";
+}
+
+.text-orange {
+   color: var(--Orange);
+}
+
+.text-red {
+  color: var(--Red);
+}
+
+.text-black {
+  color: var(--White)
+}
+
+.text-white{
+  color: var(--White);
+  font-size: 3rem;
+}
+
+.black {
+  color: var(--White);
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.nav {
+  background: linear-gradient(45deg, rgb(20, 222, 124) 0%, rgb(20, 222, 124) 21%,rgb(25, 190, 119) 21%, rgb(25, 190, 119) 37%,rgb(30, 158, 113) 37%, rgb(30, 158, 113) 46%,rgb(35, 126, 108) 46%, rgb(35, 126, 108) 53%,rgb(39, 94, 103) 53%, rgb(39, 94, 103) 59%,rgb(44, 62, 97) 59%, rgb(44, 62, 97) 77%,rgb(49, 30, 92) 77%, rgb(49, 30, 92) 100%);
+}
+
+.name {
+  color: var(--Black);
+  font-size: 2.4rem;
+  font-weight: bold;
+  text-shadow: 2px 2px var(--Grey);
+}
+
+.name:hover{
+  color: var(--Black);
+}
+
+.cart-btn{
+  background: var(--Black);
+  border: 3px solid transparent;
+  padding: 2px 15px;
+  color: var(--Yellow);
+  font-size: 1.65rem;
+  transition: 700ms;
+  font-weight: bold;
+  position: relative;
+}
+
+.cart-btn:hover{
+  border-radius: 23px;
+  transition: 700ms;
+  color: var(--Black);
+  background: var(--Yellow);
+  border-color: var(--Black);
+}
+
+.cart-btn:hover .a{
+  color: #f9d342;
+  background: #000;
+  border-color: #f9d342;
+  border-radius: 0px;
+}
+
+.a {
+  font-size: 1.4rem;
+  color: #000;
+  background: #f9d342;
+  border-radius: 10px;
+  border: 1.5px solid #000;
+  padding: 0px 6px;
+  position: absolute; 
+  left: -15px; 
+  top: -15px;
+  transition: 700ms;
+}
+
+.container-a{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.cart-btn:focus, 
+.add-btn:focus,
+.add-btn-2:focus,
+.back-btn:focus,
+.modal-btn:focus{outline: none;}
+
+/* Overwrite round border and fix the image */
+.car-image {
+  width: 400px;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 0 !important;
+}
+
+.card {
+  border-radius: 0 !important;
+  border: none !important;
+}
+
+/* ADD TO CART BTN */
+.add-btn{
+  width: 100%;
+  color: var(--Black);
+  background: var(--Orange);
+  border: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 0.08rem;
+  transition: 500ms;
+}
+
+.add-btn:hover {
+  background: #000;
+  color: var(--Orange);
+  transition: 500ms;
+}
+
+/* PRICE ANIMATION */
+.price {
+  color: var(--Black);
+  font-weight: bold;
+  font-size: 1.7rem;
+  clip-path: polygon(0 0, 100% 0, 92% 50%, 100% 100%, 0 100%, 8% 50%);
+  padding: 8px 25px;
+  background: var(--White);
+  user-select: none;
+  position: relative;
+}
+
+.price::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--Red);
+  transform: scaleY(0);
+  transform-origin: 50% 0;
+  transition: .3s ease-out;
+}
+
+.price:hover, .price:focus, .price:active {
+  color: var(--White);
+}
+
+.price:hover:before, .price:focus:before, .price:active:before {
+  transform: scaleY(1);
+}
+
+.price-2{
+  color: var(--White);
+  font-weight: bold;
+  font-size: 1.7rem;
+  clip-path: polygon(0 0, 100% 0, 92% 50%, 100% 100%, 0 100%, 8% 50%);
+  padding: 8px 0;
+  width: 200px;
+  background: var(--Red);
+  user-select: none;
+}
+
+.added-btn {
+  color: var(--White) !important;
+  font-style: italic;
+
+}
+
+.icon {
+  font-size: 1.7rem;
+  color: crimson;
+}
+
+.param {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.car-outline {
+  outline: 3px solid var(--White);
+  outline-offset: 5px;
+}
+
+.back-btn {
+  background: #fff;
+  color: var(--Black);
+  border: 2px solid #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 2px 14px;
+  transition: 400ms;
+  margin: 10px;
+}
+
+.back-btn:hover{
+  color: #fff;
+  background: var(--Black);
+  border-radius: 20px;
+}
+
+.add-btn-2 {
+  background: #fff;
+  color: var(--Black);
+  border: 2px solid #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 2px 14px;
+  border-radius: 20px;
+  transition: 400ms;
+  margin: 10px;
+}
+
+.add-btn-2:hover{
+  color: #fff;
+  background: var(--Black);
+  border-radius: 0px;
+}
+
+#modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0, .6);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#white-modal {
+  background: #fff;
+  color: #161b21;
+  width: 1300px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.modal-btn{
+  background: var(--Black);
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;
+  padding: 2px 17px;
+  font-weight: bold;
+  border: 3px solid var(--Black);
+  transition: 500ms;
+}
+
+.modal-btn:hover {
+  color: var(--Black);
+  background: #fff;
+  border-radius: 20px;
+}
+
+.trash-icon {
+  color: var(--Yellow);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.card-footer{
+  background: #000 !important;
+  border: 3px solid var(--Orange);
+  color: #fff !important;
+  border-radius: 0 !important;
+  position: relative;
+}
+
+.line {
+  background: #fff;
+}
+
+.footer{
+  width: 100%;
+  height: 6rem;
 }
